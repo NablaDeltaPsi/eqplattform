@@ -1,5 +1,5 @@
 
-global GUI_version; GUI_version = '1.5'
+global GUI_version; GUI_version = '1.6'
 
 import os
 import copy
@@ -267,6 +267,7 @@ def calc_vns(mode, path, BG, L, D, H, Hmin, theta):
                 f.write("%.6f" % segmentwinkel[i] + "\t")
                 f.write("%.6f" % segmentlageroffset[i] + "\n")
 
+        mpl.use("pdf")
         save_pdf(os.path.join(path, BASENAME  + "_DIN_A3.pdf"), BASENAME.replace("_",",  ").replace("-",": ").replace("Segment,  ",""), 'DIN A3', segmentpos, segmenthoehe)
         save_pdf(os.path.join(path, BASENAME  + "_DIN_A4.pdf"), BASENAME.replace("_",",  ").replace("-",": ").replace("Segment,  ",""), 'DIN A4', segmentpos, segmenthoehe)
         save_pdf(os.path.join(path, BASENAME  + "_DIN_A5.pdf"), BASENAME.replace("_",",  ").replace("-",": ").replace("Segment,  ",""), 'DIN A5', segmentpos, segmenthoehe)
